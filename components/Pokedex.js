@@ -1,7 +1,7 @@
-function Pokedex({ pokemon, totalExp }) {
+function Pokedex({ pokemon, totalExp, isWinner }) {
   return (
-    <div className="Pokedex">
-      <h2>Total Experience: {totalExp}</h2>
+    <div className={`Pokedex ${isWinner ? "winner" : ""}`}>
+      <h2 className="Pokedex-title">Total Experience: {totalExp}</h2>
       <div className="Pokedex-cards">
         {pokemon.map((p) => {
           const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png`;
@@ -16,6 +16,7 @@ function Pokedex({ pokemon, totalExp }) {
           );
         })}
       </div>
+      {isWinner && <h3 className="Pokedex-winner">This hand wins!</h3>}
     </div>
   );
 }

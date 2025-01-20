@@ -4,8 +4,21 @@
   margin: 0 auto;
 }
 
+.Pokedex-title {
+  font-size: 1.2em;
+}
+
 .Pokedex-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.Pokedex.winner {
+  border: 2px solid gold;
+}
+
+.Pokedex-winner {
+  color: gold;
+  font-size: 1.2em;
 }
