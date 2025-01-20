@@ -14,4 +14,40 @@ const CARD_VALUES = {
   2: 2,
 };
 
-function Blackjack() {}
+// Fetch Cards from API
+async function fetchCards() {
+  const response = await fetch(
+    "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
+  );
+  const data = await response.json();
+  return data.cards;
+}
+
+// Calculate the Total Score
+function calculateScore(cards) {
+  const cardValues = cards.map((card) => CARD_VALUES[card.value]);
+  return cardValues.reduce((acc, value) => acc + value, 0);
+}
+
+function Blackjack({ cards, score, message }) {
+  const cards = [];
+  const score = 0;
+  const message = "";
+
+  return (
+    <div>
+      <h1>Blackjack</h1>
+      <div>
+        {cards.map((card) => {
+          <img
+            key={card.code}
+            src={card.image}
+            alt={`${card.value} of ${card.suit}`}
+          />;
+        })}
+      </div>
+      <h2>Total Score: {score}</h2>
+      {message && <h3>{message}</h3>}
+    </div>
+  );
+}
