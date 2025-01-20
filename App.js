@@ -19,7 +19,12 @@ function App() {
           const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imgId}.png`;
           return (
             <li key={char.id}>
-              {char.name} {char.type} <img src={img} />
+              <Pokecard
+                name={char.name}
+                img={img}
+                type={char.type}
+                exp={char.base_experience}
+              />
             </li>
           );
         })}
