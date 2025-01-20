@@ -1,5 +1,3 @@
-# React-Props-Pokedex
-
 # **React Props: Pokedex**
 
 **This exercise lets you pratice using React components and properties.**
