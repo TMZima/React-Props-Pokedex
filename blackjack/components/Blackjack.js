@@ -16,11 +16,15 @@ const CARD_VALUES = {
 
 // Fetch Cards from API
 async function fetchCards() {
-  const response = await fetch(
-    "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
-  );
-  const data = await response.json();
-  return data.cards;
+  try {
+    const response = await fetch(
+      "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
+    );
+    const data = await response.json();
+    return data.cards;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 // Calculate the Total Score
@@ -30,10 +34,6 @@ function calculateScore(cards) {
 }
 
 function Blackjack({ cards, score, message }) {
-  const cards = [];
-  const score = 0;
-  const message = "";
-
   return (
     <div>
       <h1>Blackjack</h1>
