@@ -1,0 +1,3 @@
+function Pokecard({ name, img, type }) {
+  // code...
+}
