@@ -13,22 +13,7 @@ function App() {
   return (
     <div>
       <h1>Pokedex</h1>
-      <ul>
-        {pokemon.map((char) => {
-          const imgId = char.id;
-          const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imgId}.png`;
-          return (
-            <li key={char.id}>
-              <Pokecard
-                name={char.name}
-                img={img}
-                type={char.type}
-                exp={char.base_experience}
-              />
-            </li>
-          );
-        })}
-      </ul>
+      <Pokedex pokemon={pokemon} />
     </div>
   );
 }
