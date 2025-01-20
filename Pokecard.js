@@ -1,7 +1,7 @@
 function Pokecard({ name, img, type, exp }) {
   return (
     <div>
-      <h1>{name}</h1>
+      <h3>{name}</h3>
       <img src={img} />
       <p>Type: {type}</p>
       <p>EXP: {exp}</p>
