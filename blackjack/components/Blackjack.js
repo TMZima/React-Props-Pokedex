@@ -36,15 +36,15 @@ function calculateScore(cards) {
 function Blackjack({ cards, score, message }) {
   return (
     <div>
-      <h1>Blackjack</h1>
-      <div>
-        {cards.map((card) => {
+      <h1>Blackjack Game</h1>
+      <div className="cards">
+        {cards.map((card) => (
           <img
             key={card.code}
             src={card.image}
             alt={`${card.value} of ${card.suit}`}
-          />;
-        })}
+          />
+        ))}
       </div>
       <h2>Total Score: {score}</h2>
       {message && <h3>{message}</h3>}
