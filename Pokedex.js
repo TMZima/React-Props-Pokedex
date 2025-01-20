@@ -1,3 +1,3 @@
 function Pokedex(props) {
-  // code...
+  return <div>{props.children}</div>;
 }

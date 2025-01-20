@@ -10,7 +10,22 @@ const pokemon = [
 ];
 
 function App() {
-  // code...
+  return (
+    <div>
+      <h1>Pokedex</h1>
+      <ul>
+        {pokemon.map((char) => {
+          const imgId = char.id;
+          const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imgId}.png`;
+          return (
+            <li key={char.id}>
+              {char.name} {char.type} <img src={img} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -1,3 +1,9 @@
 function Pokecard({ name, img, type }) {
-  // code...
+  return (
+    <div>
+      <Pokedex>
+        <h1>{name}</h1>
+      </Pokedex>
+    </div>
+  );
 }
